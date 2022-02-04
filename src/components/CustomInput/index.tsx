@@ -1,21 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, TextInput, TextInputProps } from 'react-native';
+import { StyleSheet, TextInput, TextInputProps } from 'react-native';
 
-interface IInputProps extends TextInputProps {
-  active?: boolean;
-}
-
-const CustomInput: React.FC<IInputProps> = ({children, active = false,...props}) => {
+const CustomInput: React.FC<TextInputProps> = ({children, active = false,...props}) => {
   return (
     <TextInput
-      style={styles.inputView} 
-      placeholderTextColor="#E2E2E2" 
+      style={[styles.inputView, active && styles.activeInput ]} 
+      placeholderTextColor="#b1aeff78" 
       autoCorrect={false}
       active={active}
       {...props}
-      >
-      <Text>{children}</Text>
-    </TextInput>
+    />
   )
 }
 
@@ -31,5 +25,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     marginHorizontal: 24,
     marginBottom: 6,
+    borderRadius: 6,
   },
+  activeInput: {
+    borderWidth: 2,
+    borderColor: '#9795f5'
+  }
 });

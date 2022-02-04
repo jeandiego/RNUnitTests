@@ -11,6 +11,17 @@ const config = {
   ],
   setupFilesAfterEnv: [
     "@testing-library/jest-native/extend-expect"
+  ],
+  // testMatch: ['**/__tests__/**/*.spec.tsx', '**/__tests__/**/*.spec.ts'],
+  collectCoverage: true,
+  collectCoverageFrom: [
+    "src/**/*.tsx",
+    "src/**/*.ts",
+    "!src/**/*.spec.tsx",
+    "!src/*.tsx"
+  ],
+  coverageReporters: [
+    "lcov"
   ]
 };
 

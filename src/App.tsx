@@ -7,7 +7,6 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Profile from './screens/Profile';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-
 function HomeScreen() {
   const navigation = useNavigation();
   return (
@@ -19,8 +18,9 @@ function HomeScreen() {
       onPress={() => navigation.navigate('Profile')}>
         <Text>Ir para Profile</Text>
       </TouchableOpacity>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />  
     </SafeAreaView>
+  
   );
 }
 
